@@ -26,6 +26,7 @@
     "cp": "^0.2.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.5.3",
-    "jshint": "latest"
+    "jshint": "latest",
+    "uglify-js": "latest"
   }
 }

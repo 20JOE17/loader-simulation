@@ -1,19 +1,30 @@
 /* jshint browserify: true */
 
-var simulateProgress = require('simulate-progress');
-var loaderElement = document.querySelector(".progress");
-var progressElement = document.querySelector(".loader");
+function progressCallback(percent){
+  divWithProgress.style.width = percent + "%" ;
+}
 
-  function progressCallback(percent){
-    loaderElement.style.width = percent;
-  }
+function finishCallback(){
+  divWithProgress.classList.add("finished");
+}
 
-  function finishCallback(){
-    progressElement.add("finished");
-  }
+function startSimulation(){
+  divWithProgress.classList.remove("finished");
+  simulateProgress(progressCallback, finishCallback);
+}
 
-  function startSimulation(){
-    loaderElement.remove("finished");
-    simulateProgress(progressCallback, finishCallback);
-  }
+var simulateProgress = require("simulate-progress");
+var buttons = document.querySelectorAll("button");
+
+buttons.forEach(function (button, index) {
+
+  button.addEventListener("click", function() {
+    console.log(this.parentNode);
+    divWithProgress = this.parentNode.childNodes[1];
+
+    startSimulation();
+  });
+});
+
+var divWithProgress;
 

@@ -4,6 +4,7 @@
   height: 24px;
   border-radius: 12px;
   border: 1px solid #999;
+  margin-top: 27px;
 
   .progress {
     background-color: #333;
@@ -13,6 +14,8 @@
     border-radius: 10px;
     &.finished {
       background-color: green;
+      max-width: 296px;
     }
   }
 }
+

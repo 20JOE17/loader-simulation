@@ -3,7 +3,8 @@
   max-width: 300px;
   height: 24px;
   border-radius: 12px;
-  border: 1px solid #999; }
+  border: 1px solid #999;
+  margin-top: 27px; }
   .loader .progress {
     background-color: #333;
     margin: 2px;
@@ -11,4 +12,5 @@
     height: 20px;
     border-radius: 10px; }
     .loader .progress.finished {
-      background-color: green; }
+      background-color: green;
+      max-width: 296px; }
