@@ -5,9 +5,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "mkdirp docs && cp index.html docs/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css"
+    "prebuild": "jshint index.js && mkdirp docs && cp index.html docs/",
+    "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css",
+    "test": "shint index.js"
+
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,11 @@
   },
   "homepage": "https://github.com/20JOE17/loader-simulation#readme",
   "devDependencies": {
+    "simulate-progress": "zeropaper/xt-simulate-progress",
     "browserify": "^14.4.0",
     "cp": "^0.2.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.5.3",
+    "jshint": "latest"
   }
 }
